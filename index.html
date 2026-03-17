@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rallismart – Nhà Thông Minh Rạng Đông | Tiết Kiệm 30% Điện</title>
+  <meta name="description" content="Rallismart là giải pháp nhà thông minh 100% Việt Nam của Rạng Đông. Điều khiển ánh sáng, điều hòa, rèm cửa bằng giọng nói. Tiết kiệm 30% tiền điện. Tư vấn miễn phí.">
+  <style>
+    /* === LOGO HEADER === */
+    .logo-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      gap: 14px;
+    }
+    .logo-header img {
+      height: 40px;
+      width: auto;
+    }
+    .logo-divider {
+      width: 1px;
+      height: 32px;
+      background: var(--color-border);
+    }
+    .logo-rallismart {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .logo-rallismart .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+    }
+    .logo-rallismart .brand-sub {
+      font-size: 11px;
+      color: var(--color-text-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    :root {
+      --color-primary: #e63012;
+      --color-primary-hover: #c0280e;
+      --color-bg: #ffffff;
+      --color-surface: #fff8f6;
+      --color-text: #1e293b;
+      --color-text-light: #64748b;
+      --color-accent: #f59e0b;
+      --color-border: #e2e8f0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--color-primary); text-decoration: none; }
+
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; margin: 0 auto; }
+    section { padding: 64px 0; }
+
+    .disclosure {
+      background: var(--color-surface);
+      border-left: 3px solid var(--color-primary);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--color-text-light);
+      margin: 24px auto 0;
+      max-width: 720px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      background: linear-gradient(135deg, #fff8f6 0%, #fff 60%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(230, 48, 18, 0.06);
+    }
+    .hero .badge {
+      display: inline-block;
+      background: #fff3f0;
+      color: var(--color-primary);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #ffd0c8;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--color-primary); }
+    .hero .subtitle {
+      font-size: 20px;
+      color: var(--color-text-light);
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 16px 40px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+    .cta:hover { background: var(--color-primary-hover); color: #fff; transform: translateY(-1px); }
+    .cta-note {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--color-text-light);
+    }
+
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--color-border);
+      background: #fff;
+    }
+    .trust-item {
+      font-size: 14px;
+      color: var(--color-text-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+    .stars { color: var(--color-accent); }
+
+    .intro-strip {
+      background: var(--color-primary);
+      color: #fff;
+      text-align: center;
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .intro-strip strong { font-weight: 700; }
+
+    .features { background: var(--color-bg); }
+    .features h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .features .section-sub {
+      text-align: center;
+      color: var(--color-text-light);
+      font-size: 17px;
+      margin-bottom: 48px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .feature-card {
+      text-align: center;
+      padding: 28px 20px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .feature-icon { font-size: 38px; margin-bottom: 14px; }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    .savings {
+      background: var(--color-surface);
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .savings-number {
+      font-size: 72px;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    .savings p { font-size: 18px; color: var(--color-text-light); margin-top: 8px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    .pricing {
+      background: var(--color-bg);
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .pricing .price-sub {
+      font-size: 16px;
+      color: var(--color-text-light);
+      margin-bottom: 32px;
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+    .pricing-card {
+      border: 2px solid var(--color-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: left;
+    }
+    .pricing-card.featured {
+      border-color: var(--color-primary);
+      position: relative;
+    }
+    .pricing-card .tag {
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .pricing-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .pricing-card .price { font-size: 28px; font-weight: 800; color: var(--color-primary); }
+    .pricing-card .price-desc { font-size: 13px; color: var(--color-text-light); margin-bottom: 16px; }
+    .pricing-card ul { list-style: none; }
+    .pricing-card ul li {
+      font-size: 14px;
+      padding: 5px 0;
+      color: var(--color-text-light);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .pricing-card ul li::before { content: "✓"; color: var(--color-primary); font-weight: 700; flex-shrink: 0; }
+
+    .testimonial { background: var(--color-surface); }
+    .testimonial-card {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 32px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+    }
+    .testimonial-card blockquote {
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    .testimonial-card cite {
+      font-size: 14px;
+      color: var(--color-text-light);
+      font-style: normal;
+    }
+    .testimonial-stars { color: var(--color-accent); font-size: 20px; margin-bottom: 12px; }
+
+    .audience { background: var(--color-bg); }
+    .audience h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .audience-list {
+      max-width: 640px;
+      margin: 0 auto;
+      list-style: none;
+    }
+    .audience-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .audience-list li::before {
+      content: "✓";
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .faq { background: var(--color-surface); }
+    .faq h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .faq-list { max-width: 640px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+      padding: 20px 0;
+    }
+    .faq-item summary {
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 22px;
+      color: var(--color-text-light);
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item p {
+      margin-top: 12px;
+      font-size: 15px;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 80px 24px;
+    }
+    .final-cta h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .final-cta p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--color-primary);
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-white:hover { background: #f1f5f9; color: var(--color-primary); transform: translateY(-1px); }
+    .final-cta .cta-note { color: rgba(255,255,255,0.7); }
+
+    .page-footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #999;
+      border-top: 1px solid var(--color-border);
+    }
+    .page-footer a { color: #155DFC; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 28px; }
+      .hero .subtitle { font-size: 17px; }
+      .feature-grid { grid-template-columns: 1fr; gap: 16px; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      .cta, .cta-white { width: 100%; text-align: center; padding: 16px 24px; display: block; }
+      .trust-bar { gap: 16px; }
+      .savings-number { font-size: 56px; }
+      section { padding: 48px 0; }
+      .final-cta h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGO HEADER -->
+  <header class="logo-header">
+    <img src="https://rangdong.com.vn/themes/rangdong/images/logo.png"
+         alt="Rạng Đông"
+         onerror="this.style.display='none'">
+    <div class="logo-divider"></div>
+    <div class="logo-rallismart">
+      <span class="brand-name">Rallismart</span>
+      <span class="brand-sub">Nhà thông minh</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="disclosure">
+      <strong>Công bố liên kết:</strong> Trang này có thể chứa liên kết tiếp thị liên kết. Nếu bạn đặt hàng qua các liên kết này, chúng tôi có thể nhận hoa hồng mà không tính thêm phí cho bạn. Chúng tôi chỉ giới thiệu sản phẩm đã được đánh giá kỹ lưỡng.
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="badge">🇻🇳 100% Thương hiệu Việt Nam</div>
+      <h1>Ngôi Nhà Thông Minh<br><span>Tiết Kiệm 30% Tiền Điện</span></h1>
+      <p class="subtitle">Rallismart của Rạng Đông biến căn nhà bình thường thành nhà thông minh — điều khiển bằng giọng nói, tiết kiệm năng lượng, an toàn tuyệt đối.</p>
+      <a href="tel:19002098" class="cta">Nhận Tư Vấn Miễn Phí →</a>
+      <span class="cta-note">Hotline 1900 2098 · Tư vấn tận nơi · Không cam kết</span>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item"><span class="stars">★★★★★</span> Đánh giá 4.8/5</div>
+    <div class="trust-item">🏠 Hàng nghìn ngôi nhà đã lắp đặt</div>
+    <div class="trust-item">🏭 Sản xuất tại Việt Nam từ 1979</div>
+    <div class="trust-item">⚡ Tiết kiệm 30% chi phí điện</div>
+  </div>
+
+  <div class="intro-strip">
+    Giải pháp nhà thông minh <strong>duy nhất</strong> do người Việt thiết kế — phù hợp thói quen, khí hậu và không gian sống Việt Nam
+  </div>
+
+  <section class="features">
+    <div class="container">
+      <h2>Tại Sao Chọn Rallismart?</h2>
+      <p class="section-sub">Công nghệ hiện đại, dễ dùng với mọi thành viên trong gia đình</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎙️</div>
+          <h3>Điều Khiển Bằng Giọng Nói</h3>
+          <p>Tích hợp trợ lý Maika tiếng Việt chuẩn — chỉ cần nói "Maika, tắt đèn phòng khách" là xong. Hoạt động mượt mà, không cần phát âm theo giọng nước ngoài.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3>Kết Nối Bluetooth Mesh</h3>
+          <p>Không phụ thuộc WiFi hay internet — hệ thống vẫn hoạt động ngay cả khi mất mạng. Độ trễ cực thấp, phản hồi tức thì khi ra lệnh.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+          <h3>Tiết Kiệm 30% Tiền Điện</h3>
+          <p>Công nghệ LED Sunlike tự động điều chỉnh độ sáng theo ánh nắng tự nhiên. Cảm biến phát hiện người — đèn tắt ngay khi phòng trống, không lãng phí điện.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Điều Khiển Từ Xa Mọi Nơi</h3>
+          <p>Ứng dụng RalliSmart trên iOS & Android cho phép bật/tắt thiết bị khi đang ở công ty hay đi du lịch. Kiểm tra an toàn ngôi nhà chỉ trong 1 chạm.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Tự Động Hóa Thông Minh</h3>
+          <p>Rèm tự mở khi trời sáng, điều hòa tự điều chỉnh nhiệt độ, bình nóng lạnh bật theo lịch. Một lần cài đặt, tận hưởng mãi mãi.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Lắp Đặt Đơn Giản</h3>
+          <p>Không cần đục tường hay đi lại dây điện — lắp thay thế thiết bị cũ tại chỗ. Rạng Đông cử chuyên gia tư vấn và lắp đặt tận nhà miễn phí.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="savings">
+    <div class="container">
+      <div class="savings-number">30%</div>
+      <p>Đó là mức tiết kiệm tiền điện trung bình của các gia đình sau khi lắp đặt Rallismart — nhờ đèn LED Sunlike và hệ thống tự động hóa thông minh.</p>
+    </div>
+  </div>
+
+  <section class="pricing">
+    <div class="container">
+      <h2>Chi Phí Đầu Tư</h2>
+      <p class="price-sub">Giải pháp linh hoạt cho mọi quy mô căn nhà</p>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Gói Cơ Bản</h3>
+          <div class="price">Từ 3 triệu</div>
+          <div class="price-desc">cho căn phòng đơn lẻ</div>
+          <ul>
+            <li>Đèn LED thông minh</li>
+            <li>Điều khiển qua app</li>
+            <li>Hẹn giờ tự động</li>
+            <li>Bảo hành 12 tháng</li>
+          </ul>
+        </div>
+        <div class="pricing-card featured">
+          <div class="tag">Phổ biến nhất</div>
+          <h3>Gói Căn Hộ</h3>
+          <div class="price">~30 triệu</div>
+          <div class="price-desc">cho căn hộ 3 phòng ngủ</div>
+          <ul>
+            <li>Toàn bộ hệ thống chiếu sáng</li>
+            <li>Điều khiển rèm, điều hòa</li>
+            <li>Camera an ninh AI</li>
+            <li>Giọng nói tiếng Việt (Maika)</li>
+            <li>Tư vấn & lắp đặt miễn phí</li>
+            <li>Hỗ trợ sau bán hàng trọn đời</li>
+          </ul>
+        </div>
+      </div>
+      <a href="tel:19002098" class="cta">Nhận Báo Giá Chính Xác →</a>
+      <span class="cta-note">Khảo sát & tư vấn tận nhà · Miễn phí · Không cam kết mua</span>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"Lắp Rallismart xong là cả nhà mê luôn. Mẹ tôi 70 tuổi chỉ cần nói 'Maika, bật đèn' là xong — không cần học app hay điều khiển gì. Tiền điện tháng trước giảm hơn 30% so với trước khi lắp."</blockquote>
+        <cite>— Anh Minh Tuấn, chủ căn hộ tại Hà Nội · Khách hàng Rallismart từ 2023</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience">
+    <div class="container">
+      <h2>Rallismart Phù Hợp Với Bạn Nếu...</h2>
+      <ul class="audience-list">
+        <li>Bạn muốn tiết kiệm hóa đơn điện mà không giảm tiện nghi sống</li>
+        <li>Gia đình có người cao tuổi cần giải pháp dễ dùng hơn smartphone</li>
+        <li>Bạn đang xây nhà mới hoặc cải tạo căn hộ</li>
+        <li>Bạn thường xuyên đi công tác và muốn kiểm soát nhà từ xa</li>
+        <li>Bạn cần hệ thống an ninh camera thông minh 24/7</li>
+        <li>Bạn muốn sản phẩm made-in-Vietnam, có hỗ trợ tiếng Việt thực sự</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2>Câu Hỏi Thường Gặp</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Có phải đục tường hay đi lại dây điện không?</summary>
+          <p>Không. Rallismart được thiết kế để lắp thay thế các thiết bị điện hiện có (công tắc, đèn, ổ cắm) mà không cần thay đổi hệ thống dây điện trong tường. Kỹ thuật viên Rạng Đông sẽ đến khảo sát và lắp đặt tại nhà bạn.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Rallismart có hoạt động khi mất internet không?</summary>
+          <p>Có. Đây là ưu điểm lớn nhất của Rallismart so với các thương hiệu nước ngoài. Nhờ công nghệ Bluetooth Mesh, hệ thống hoạt động hoàn toàn cục bộ — bạn vẫn điều khiển được tất cả thiết bị trong nhà dù mất WiFi.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Chi phí lắp đặt và tư vấn có mất tiền không?</summary>
+          <p>Hoàn toàn miễn phí. Rạng Đông cung cấp dịch vụ khảo sát thực tế, đánh giá chiếu sáng, tư vấn giải pháp phù hợp và lắp đặt — tất cả không tính thêm phí khi bạn mua gói sản phẩm.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Thời gian lắp đặt mất bao lâu?</summary>
+          <p>Thông thường 1–2 ngày cho căn hộ tiêu chuẩn (3 phòng ngủ). Với nhà lớn hơn, đội ngũ kỹ thuật Rạng Đông sẽ báo tiến độ cụ thể sau khi khảo sát thực tế.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Rallismart có tương thích với điều hòa, rèm cửa cũ không?</summary>
+          <p>Có hỗ trợ tương thích với hầu hết các thiết bị điện gia dụng phổ biến tại Việt Nam qua bộ điều khiển hồng ngoại thông minh. Đội ngũ kỹ thuật sẽ kiểm tra và xác nhận khi khảo sát tại nhà bạn.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Sau khi lắp xong có được hỗ trợ không?</summary>
+          <p>Có. Rạng Đông cung cấp hỗ trợ kỹ thuật sau bán hàng và bảo hành sản phẩm. Hotline 1900 2098 hoạt động trong giờ hành chính để giải đáp mọi thắc mắc.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Sẵn Sàng Nâng Cấp Ngôi Nhà Của Bạn?</h2>
+      <p>Hàng nghìn gia đình Việt Nam đã sống tiện nghi hơn và tiết kiệm hơn với Rallismart. Đặt lịch tư vấn miễn phí ngay hôm nay.</p>
+      <a href="tel:19002098" class="cta-white">Gọi 1900 2098 — Miễn Phí →</a>
+      <span class="cta-note">Tư vấn tận nhà · Báo giá miễn phí · Không cam kết</span>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    Thông tin sản phẩm từ <a href="https://rangdong.com.vn" target="_blank" rel="noopener">Rạng Đông</a> ·
+    Built with <a href="https://list.affitor.com" target="_blank" rel="noopener">Affiliate Skills by Affitor</a>
+  </footer>
+
+</body>
+</html>
